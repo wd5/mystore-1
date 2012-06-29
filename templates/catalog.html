@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block site_wrapper %}
+<div id="wrapper">
+    <header id="header">
+        <a href="http://{{ home_url }}">Добро пожаловать!</a>
+    </header><!-- #header-->
+    
+    <section id="middle">
+        
+        <div id="navigation">
+            {% include 'tags/search_form.html' %}
+        </div>
+        
+        <div id="container">
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div><!-- #content-->
+        </div><!-- #container-->
+            
+        <aside id="sideLeft">
+            {% include "tags/category_list.html" %}
+        </aside><!-- #sideLeft -->
+        
+    </section><!-- #middle-->
+</div>
+
+<footer id="footer"></footer><!-- #footer -->
+
+{% endblock %}

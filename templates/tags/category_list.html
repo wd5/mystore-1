@@ -1,0 +1,16 @@
+{% load mptt_tags %}
+
+<h3>Категории товаров</h3>
+<div style="height:5px;"></div>
+<ul class="sf-menu sf-vertical">
+    {% recursetree active_categories %}
+        <li>
+            <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+</ul>

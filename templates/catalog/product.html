@@ -1,0 +1,41 @@
+{% extends "catalog.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            <td>
+                <img class="product_img" src="{{ p.image.url }}" alt="{{ p.name }}" />
+            </td>
+            <td style="padding:0 20px 20px 20px;">
+                <h1>{{ p.name }}</h1><br />
+                <span class="store-label">Цена:</span> {{ p.price }} руб.<br />
+                <span class="store-label">Производитель:</span> 
+                {% if p.brand_url %}
+                    <a href="http://{{ p.brand_url }}">{{ p.brand_url }}</a><br />
+                {% else %}
+                    не указан.<br />
+                {% endif %}
+
+                <br />
+                <table>
+                {% for a in p.get_attributes_values %}
+                    <tr>
+                        <td style="padding-right:20px;"><span class="store-label">{{ a.name }}</span></td>
+                        <td>{{ a.value}}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+                <br />
+                <span class="store-label">Входит в категорию:</span>
+                <a href="{{ p.category.get_absolute_url }}">{{ p.category.name }}</a>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <h3>Описание товара</h3>
+        {% if p.description %}
+            {{ p.description }}
+        {% else %}
+            Описание отсутствует.
+        {% endif %}
+{% endblock %}
