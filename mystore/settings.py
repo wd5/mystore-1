@@ -7,7 +7,6 @@ import os
 SITE_NAME = 'Мой магазин'
 META_KEYWORDS = 'Разные товары'
 META_DESCRIPTION = 'Мой магазин продающий разные товары'
-TEST_CONSTANT = 'Test'
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 path = lambda *args: os.path.join(ROOT, *args)
