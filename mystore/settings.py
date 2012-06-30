@@ -7,6 +7,7 @@ import os
 SITE_NAME = 'Мой магазин'
 META_KEYWORDS = 'Разные товары'
 META_DESCRIPTION = 'Мой магазин продающий разные товары'
+TEST_CONSTANT = 'Test'
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 path = lambda *args: os.path.join(ROOT, *args)
@@ -117,7 +118,7 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'pagination.middleware.PaginationMiddleware',
-    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)
@@ -151,7 +152,7 @@ INSTALLED_APPS = (
     'search',
     'pagination',
     'mptt',
-    # 'debug_toolbar',
+    'debug_toolbar',
 )
 
 # A sample logging configuration. The only tangible logging
